@@ -117,10 +117,37 @@ function saveAsHTML(content) {
   return filename;
 }
 
+async function sendEmail(htmlContent, date) {
+  const nodemailer = require('nodemailer');
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
+  });
+
+  await transporter.sendMail({
+    from: `AI Digest <${process.env.GMAIL_USER}>`,
+    to: process.env.EMAIL_TO,
+    cc: process.env.EMAIL_CC,
+    subject: `AI Daily Digest — ${date}`,
+    html: htmlContent,
+  });
+
+  console.log('Email sent successfully');
+}
+
 fetchArticles().then(async (articles) => {
   console.log(`Total articles fetched: ${articles.length}`);
   console.log('\nGenerating summary...\n');
   const summary = await summarizeWithClaude(articles);
   console.log(summary);
-  saveAsHTML(summary);
+  const filename = saveAsHTML(summary);
+  const htmlContent = fs.readFileSync(filename, 'utf-8');
+  const date = new Date().toLocaleDateString('en-US', {
+    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+  });
+  await sendEmail(htmlContent, date);
 });
