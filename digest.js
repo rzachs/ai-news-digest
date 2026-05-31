@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+console.log('API key length:', process.env.ANTHROPIC_API_KEY?.length);
+
 const fs = require('fs');
 const path = require('path');
 
