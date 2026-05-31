@@ -33,6 +33,7 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_CC: ${{ secrets.EMAIL_CC }}
+          SEND_EMAIL: ${{ secrets.SEND_EMAIL }}
         run: node digest.js
 
       - name: Commit digest to repo

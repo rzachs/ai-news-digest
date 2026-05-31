@@ -19,6 +19,8 @@ const FEEDS = [
   'https://deepmind.google/blog/rss.xml',
   'https://huggingface.co/blog/feed.xml',
   'https://tldr.tech/api/rss/ai',
+  'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml',
+  'https://www.technologyreview.com/feed/',
 ];
 
 async function fetchArticles() {
@@ -34,7 +36,7 @@ async function fetchArticles() {
       ]);
 
       const items = feed.items || [];
-      const recent = items.slice(0, 3);
+      const recent = items.slice(0, 5);
 
       if (recent.length === 0) {
         console.log(`No articles found: ${url}`);
@@ -149,5 +151,9 @@ fetchArticles().then(async (articles) => {
   const date = new Date().toLocaleDateString('en-US', {
     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
   });
-  await sendEmail(htmlContent, date);
+  if (process.env.SEND_EMAIL === 'false') {
+    console.log('Email sending skipped (SEND_EMAIL=false)');
+  } else {
+    await sendEmail(htmlContent, date);
+  }
 });
