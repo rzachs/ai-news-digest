@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Digest - Sunday, May 31, 2026</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #222; }
+    h1 { font-size: 1.4rem; color: #555; font-weight: normal; }
+    h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.05em; color: #888; margin-top: 2rem; }
+    a { color: #0070f3; }
+    strong { color: #111; }
+    hr { border: none; border-top: 1px solid #eee; margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <h1>AI Daily Digest — Sunday, May 31, 2026</h1>
+  <div id="content"><h2>Top Story</h2>
+<p><strong>Anthropic&#39;s valuation reportedly hits $965B</strong> — buried in the TLDR digest headline is a signal that Anthropic is approaching trillion-dollar territory. Combined with the Claude positioning piece and the Glasswing project launch, Anthropic is clearly in an aggressive expansion phase across product, research, and brand. For builders, this means the Claude API ecosystem is getting more investment, not less — bet on it staying competitive with OpenAI.</p>
+<hr>
+<h2>Must Read</h2>
+<ul>
+<li><p><strong>[Hugging Face] <a href="https://huggingface.co/blog/ibm-research/itbench-aa">ITBench-AA: Frontier Models Score Below 50% on Agentic Enterprise IT Tasks</a></strong> — A new benchmark from Artificial Analysis and IBM shows that frontier models fail more than half the time on real enterprise IT agentic workflows. This is a concrete data point on where current agents break down — not reasoning, but the messy, multi-step, tool-heavy reality of enterprise ops. If you&#39;re building agentic products for IT/enterprise, this benchmark tells you exactly where the floor is and what gaps your product needs to cover. Worth reading the full methodology.</p>
+</li>
+<li><p><strong>[OpenAI News] <a href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense">Rosalind Biodefense</a></strong> — OpenAI is expanding a specialized GPT model (GPT-Rosalind) for biodefense and public health, with access gated to vetted developers and U.S. government partners. This is OpenAI formally entering the high-trust, domain-specialized government model business — a lane that&#39;s going to get crowded fast. If you&#39;re in healthtech or GovTech, watch how the access program evolves; early vetted access could be a moat.</p>
+</li>
+<li><p><strong>[Google DeepMind] <a href="https://deepmind.google/blog/fast-tracking-genetic-leads-to-reverse-cellular-aging/">Fast-Tracking Genetic Leads to Reverse Cellular Aging</a></strong> — DeepMind&#39;s Co-Scientist tool helped biologists identify novel genetic factors that rejuvenate human cells. This isn&#39;t a model release, but it&#39;s a capability proof point: AI-assisted hypothesis generation is producing wet-lab-validated results in longevity biology. The biotech x AI application layer is heating up fast.</p>
+</li>
+<li><p><strong>[TLDR AI] <a href="https://tldr.tech/ai/2026-05-29">Microsoft&#39;s Coding Model + Opus 4.8</a></strong> — The digest references both a new Microsoft coding model and what appears to be a Claude Opus 4.8 release. Details are thin from the headline alone, but if Opus 4.8 is real, that&#39;s a significant model update worth verifying directly on Anthropic&#39;s API changelog. Microsoft entering the coding model space more directly (beyond Copilot) increases competitive pressure on Codex/GPT-5.5 and open-weight alternatives.</p>
+</li>
+<li><p><strong>[TLDR AI] <a href="https://tldr.tech/ai/2026-05-28">Cognition at $26B Valuation + OpenAI Private MCP</a></strong> — Two signals here: Cognition (makers of Devin) hitting $26B suggests the market is pricing coding agents as a massive category, not a feature. OpenAI launching a private MCP (Model Context Protocol) implementation means the agentic tool-calling ecosystem is consolidating around MCP as a standard — if you&#39;re building agents, get fluent with MCP now.</p>
+</li>
+</ul>
+<hr>
+<h2>Worth Knowing</h2>
+<ul>
+<li><p><strong>[Google DeepMind] <a href="https://deepmind.google/blog/simulate-real-world-places-with-project-genie-and-street-view/">Project Genie + Street View Simulation</a></strong> — Genie can now simulate real-world locations using Street View data, expanding to Google AI Ultra subscribers globally — interesting for spatial AI and embodied agent research.</p>
+</li>
+<li><p><strong>[OpenAI News] <a href="https://openai.com/index/braintrust">Braintrust Uses Codex + GPT-5.5 for Engineering</a></strong> — A real-world case study of an AI-native team using Codex to accelerate experimentation; useful signal on how GPT-5.5 performs in production coding workflows.</p>
+</li>
+<li><p><strong>[OpenAI News] <a href="https://openai.com/index/boston-childrens-hospital">Boston Children&#39;s Hospital Rare Disease Diagnoses</a></strong> — OpenAI tech helped diagnose 40+ rare disease cases; more a marketing case study than a technical disclosure, but validates clinical diagnostic as a real deployment category.</p>
+</li>
+<li><p><strong>[Hugging Face] <a href="https://huggingface.co/blog/local-reachy-mini-conversation">Reachy Mini Goes Fully Local</a></strong> — Small robot running fully local conversational AI; relevant if you&#39;re watching the embodied AI + edge inference space.</p>
+<ul>
+<li><strong>Try This:</strong> Reachy Mini is an open-source desktop robot from Pollen Robotics now running local LLMs for conversation. Get started at the <a href="https://huggingface.co/blog/local-reachy-mini-conversation">Hugging Face blog post</a> which links to the setup guide.</li>
+</ul>
+</li>
+<li><p><strong>[Hugging Face] <a href="https://huggingface.co/blog/torch-profiler">PyTorch Profiler Beginner&#39;s Guide</a></strong> — Practical intro to <code>torch.profiler</code> for anyone optimizing model inference or training pipelines.</p>
+<ul>
+<li><strong>Try This:</strong> <code>torch.profiler</code> is PyTorch&#39;s built-in performance profiling tool. Start with the guide at <a href="https://huggingface.co/blog/torch-profiler">huggingface.co/blog/torch-profiler</a> and run your first profile in under 10 lines of code.</li>
+</ul>
+</li>
+<li><p><strong>[TLDR AI] <a href="https://tldr.tech/ai/2026-05-27">DeepSWE + xAI Cursor Limits + China AI Travel Restrictions</a></strong> — DeepSWE is worth a look as another coding agent benchmark entrant; the China AI travel restrictions are a geopolitical signal worth tracking for anyone with cross-border research or hiring exposure.</p>
+</li>
+</ul>
+<hr>
+<h2>Skip Today</h2>
+<ul>
+<li>[Anthropic News] <a href="https://www.anthropic.com/news/claude-is-a-space-to-think">Claude is a space to think</a></li>
+<li>[Anthropic News] <a href="https://www.anthropic.com/81k-interviews">What 81,000 people want from AI</a></li>
+<li>[Anthropic News] <a href="https://www.anthropic.com/glasswing">Project Glasswing</a></li>
+<li>[Google DeepMind News] <a href="https://deepmind.google/blog/were-launching-the-google-deepmind-accelerator-program-in-asia-pacific-to-tackle-environmental-risks/">Google DeepMind Accelerator Program in Asia Pacific</a></li>
+</ul>
+<hr>
+<h2>Trend to Watch</h2>
+<p>The agentic gap between benchmark performance and real-world deployment is becoming impossible to ignore. ITBench-AA showing sub-50% scores on enterprise IT tasks, Cognition&#39;s valuation implying massive market expectations for coding agents, and OpenAI&#39;s private MCP push all point to the same tension: the market is pricing agentic AI as transformative while actual reliability in complex, multi-step enterprise tasks remains poor. The builders who win in the next 12 months won&#39;t just be the ones with the best underlying model — they&#39;ll be the ones who instrument, eval, and recover from agent failures better than anyone else. Benchmarks like ITBench-AA are your friend here; use them to set honest expectations with customers and to identify where human-in-the-loop handoffs still need to live.</p>
+</div>
+</body>
+</html>
