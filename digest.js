@@ -45,7 +45,15 @@ async function fetchArticles() {
         continue;
       }
 
-      for (const item of recent) {
+      const cutoff = Date.now() - 24 * 60 * 60 * 1000;
+      const filtered = recent.filter(item => {
+        const dateStr = item.isoDate || item.pubDate;
+        if (!dateStr) return true;
+        const pubTime = new Date(dateStr).getTime();
+        return isNaN(pubTime) || pubTime >= cutoff;
+      });
+
+      for (const item of filtered) {
         articles.push({
           source: feed.title || url,
           title: item.title || 'No title',
@@ -54,7 +62,7 @@ async function fetchArticles() {
         });
       }
 
-      console.log(`OK: ${feed.title} - ${recent.length} articles`);
+      console.log(`OK: ${feed.title} — ${filtered.length} of ${recent.length} articles are from last 24h`);
 
     } catch (err) {
       console.log(`FAILED: ${url} - ${err.message}`);
